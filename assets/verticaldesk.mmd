@@ -1,0 +1,7 @@
+flowchart LR
+  A[Request] --> B[Classify]
+  B --> C[Retrieve knowledge]
+  C --> D[Draft and route]
+  D --> E{Human approval}
+  E -->|Approve| F[Create incident]
+  E -->|Reject| G[Discard]

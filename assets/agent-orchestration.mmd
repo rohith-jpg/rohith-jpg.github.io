@@ -1,0 +1,8 @@
+flowchart LR
+  A[User task] --> B[Supervisor]
+  B --> C[Research specialist]
+  B --> D[Code specialist]
+  C --> E[Reviewer]
+  D --> E
+  E -->|Approved| F[Synthesis]
+  E -->|Rejected| G[Retry or human escalation]

@@ -1,0 +1,6 @@
+flowchart LR
+  A[PDF documents] --> B[Chunks and embeddings]
+  B --> C[FAISS retrieval]
+  C --> D{Evidence available?}
+  D -->|Yes| E[Answer with citations]
+  D -->|No| F[Abstain]

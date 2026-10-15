@@ -1,0 +1,8 @@
+flowchart LR
+  A[Public FDA snapshot] --> B[SQLite BM25 retrieval]
+  B --> C[Local LLM fact selection]
+  C --> D[Python claim validator]
+  D --> E[Evidence packet or abstention]
+  F[Simulated inventory] --> G[Budget planning]
+  E --> H[Human review]
+  G --> H
