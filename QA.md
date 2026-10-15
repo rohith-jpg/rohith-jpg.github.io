@@ -1,6 +1,17 @@
 # Verification notes
 
-## Measured Lighthouse run
+## Published HTTPS Lighthouse run
+
+Audited https://rohith-jpg.github.io/ with Lighthouse 13.5.0 in mobile emulation on 2026-10-15T01:46:00.142Z.
+
+- Performance: **100 / 100**
+- Accessibility: **100 / 100**
+- Best Practices: **100 / 100**
+- SEO: **100 / 100**
+
+GitHub Pages deployment completed successfully for commit 7f61365f1d3df483ca98a13c55ffe9f3cf7ff863.
+
+## Measured local Lighthouse run
 
 Local HTTP audit with Lighthouse 13.5.0, mobile emulation (412px), on 2026-10-15T01:16:16.846Z.
 
@@ -19,3 +30,4 @@ Scores describe this local run, not a guarantee for every device or network. Re-
 - Mobile Lighthouse screenshot inspected; responsive menu and single-column layout visible.
 - Private VerticalDesk image URLs were unavailable; no broken external screenshot is published. Its source remains private.
 - Missing resume, credential verification links, employment dates, screenshot/demo links and unevaluated results remain explicit TODOs.
+
