@@ -42,7 +42,7 @@ Use a plan whose current terms fit your use. [Vercel's official GitHub deploymen
 - Save the actual resume as `assets/rohith-singhu-resume.pdf`.
 - Set `resume` in `content.json` to `assets/rohith-singhu-resume.pdf` and rebuild. The PDF must be present before publishing the active button.
 - Set each certification's `verify` value to the public credential verification URL. Leave null until supplied.
-- Replace the explicit `[TODO]` dates and contribution notes in `build.py` only with confirmed facts.
+- Experience dates and roles live in `build.py`; update them only with confirmed facts.
 - Add public demo URLs and authentic project screenshots in `content.json`; missing items are labeled rather than fabricated.
 
 ## Evidence and scope

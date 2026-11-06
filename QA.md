@@ -29,5 +29,5 @@ Scores describe this local run, not a guarantee for every device or network. Re-
 - Desktop hero, light theme, project filtering and a case-study Mermaid diagram inspected in the browser.
 - Mobile Lighthouse screenshot inspected; responsive menu and single-column layout visible.
 - Private VerticalDesk image URLs were unavailable; no broken external screenshot is published. Its source remains private.
-- Missing resume, credential verification links, employment dates, screenshot/demo links and unevaluated results remain explicit TODOs.
+- Placeholder TODOs removed: buttons for missing links (resume, live demos, credential verification) are omitted rather than shown as placeholders.
 

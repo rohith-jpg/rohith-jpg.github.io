@@ -10,12 +10,14 @@
     {
       "name": "CompTIA Security+",
       "issuer": "CompTIA",
-      "verify": null
+      "verify": null,
+      "earned": "Sep 2026"
     },
     {
       "name": "AWS Certified Cloud Practitioner",
       "issuer": "Amazon Web Services",
-      "verify": null
+      "verify": null,
+      "earned": "May 2025"
     }
   ],
   "projects": [
@@ -39,7 +41,7 @@
         "52/75 tasks passed in the committed evaluation",
         "10/10 should-abstain tasks passed"
       ],
-      "resultNote": "Developer-authored benchmark; not a production accuracy claim.",
+      "resultNote": "Evaluated on a 75-task benchmark I built.",
       "evidence": "https://github.com/rohith-jpg/RAGenius/blob/main/eval/report_v4.md",
       "demo": null,
       "screenshot": null,
@@ -54,81 +56,7 @@
       ],
       "mermaid": "flowchart LR\n  A[PDF documents] --> B[Chunks and embeddings]\n  B --> C[FAISS retrieval]\n  C --> D{Evidence available?}\n  D -->|Yes| E[Answer with citations]\n  D -->|No| F[Abstain]",
       "learning": "The evaluation makes the tradeoff visible: citation coverage does not guarantee a useful answer. The committed report includes short-answer and keyword-miss failures, so improving answer completeness is a clearer next step than claiming the system is solved.",
-      "limits": "The report records 42/65 document-Q&A tasks passing and an average latency of 7.387 seconds for that run. Results depend on the document set, evaluation rules and hardware. A public hosted demo and genuine UI capture are still TODOs."
-    },
-    {
-      "slug": "agent-orchestration",
-      "name": "Agent Orchestration",
-      "repo": "agent-orchestration",
-      "category": "Agents & tools",
-      "type": "LANGGRAPH / AGENT WORKFLOWS",
-      "accent": "cyan",
-      "headline": "Specialists with a reviewer in the loop.",
-      "summary": "A task orchestration prototype that routes research and code work to specialists, reviews outputs, and records decisions in a structured trace.",
-      "stack": [
-        "Python",
-        "LangGraph",
-        "Anthropic API",
-        "Tavily",
-        "Docker"
-      ],
-      "results": [
-        "Example trace records planning, dispatch, tools, review and synthesis",
-        "[TODO] Add a reproducible routing-quality benchmark"
-      ],
-      "resultNote": "The README shows example runs; they are not a general performance benchmark.",
-      "evidence": "https://github.com/rohith-jpg/agent-orchestration#proof-it-works--real-outputs",
-      "demo": null,
-      "screenshot": null,
-      "problem": "A request can combine research and calculation. A single answer hides which tool ran, how the task was split, and whether a result was reviewed.",
-      "approach": "I use a LangGraph supervisor to plan and route subtasks, separate research and code specialists to execute them, and a reviewer to approve, retry or escalate. JSON traces capture the path from the original task to the final response.",
-      "workflow": [
-        "User task",
-        "Supervisor plan",
-        "Research / code",
-        "Reviewer",
-        "Synthesis / escalation"
-      ],
-      "mermaid": "flowchart LR\n  A[User task] --> B[Supervisor]\n  B --> C[Research specialist]\n  B --> D[Code specialist]\n  C --> E[Reviewer]\n  D --> E\n  E -->|Approved| F[Synthesis]\n  E -->|Rejected| G[Retry or human escalation]",
-      "learning": "A reviewer can be wrong when it judges new information using stale knowledge. The README documents a fix that supplies the current date and narrows rejection criteria to what the reviewer can actually assess. I would validate that change with a labeled benchmark before making an approval-rate claim.",
-      "limits": "The README contains a 15.51-second example trace, not a latency guarantee. Parallel execution, shared Redis state and cost tracking are roadmap items. A hosted demo, UI screenshot and measured routing benchmark are TODOs."
-    },
-    {
-      "slug": "rxsupply-ai",
-      "name": "RxSupply AI",
-      "repo": "rxsupply-ai",
-      "category": "AI & retrieval",
-      "type": "LOCAL AI / EVIDENCE VALIDATION",
-      "accent": "mint",
-      "headline": "AI proposes. Python checks. A person decides.",
-      "summary": "An evidence-grounded medicine supply prototype for operations teams. Validates model-selected facts against FDA records and prepares simulated replenishment plans for human review.",
-      "stack": [
-        "Python",
-        "SQLite FTS5",
-        "BM25",
-        "Ollama",
-        "JSON API"
-      ],
-      "results": [
-        "10/10 small regression cases passed; LLM not evaluated by this suite",
-        "1,600 normalized records in the dated source snapshot"
-      ],
-      "resultNote": "Developer-authored cases; procurement scenarios are synthetic.",
-      "evidence": "https://github.com/rohith-jpg/rxsupply-ai/blob/main/docs/evaluation.json",
-      "demo": null,
-      "screenshot": null,
-      "problem": "Medicine supply review involves different evidence: national notices, local stock and a purchasing budget. A generated answer can blur those boundaries or invent facts that the source never contained.",
-      "approach": "I retrieve product records with SQLite FTS5 and BM25, ask an optional local model to select facts, and independently compare every proposed field/value against retrieved evidence. Missing or invalid evidence leads to abstention. A separate planning tool works with synthetic inventory under budget and supplier constraints.",
-      "workflow": [
-        "FDA snapshot",
-        "BM25 retrieval",
-        "Local model",
-        "Python validation",
-        "Human review"
-      ],
-      "mermaid": "flowchart LR\n  A[Public FDA snapshot] --> B[SQLite BM25 retrieval]\n  B --> C[Local LLM fact selection]\n  C --> D[Python claim validator]\n  D --> E[Evidence packet or abstention]\n  F[Simulated inventory] --> G[Budget planning]\n  E --> H[Human review]\n  G --> H",
-      "learning": "Separating model proposals from deterministic validation makes failures inspectable. Exact source agreement is useful, but it cannot establish clinical suitability or local availability. The evaluation explicitly separates the extractive baseline from the optional LLM path.",
-      "limits": "This is a CLI and loopback-only JSON API prototype, not a deployed pharmacy service or clinical system. The 10-case regression suite does not evaluate LLM accuracy. A current screenshot and broader evaluation are TODOs."
+      "limits": "The same report records 42/65 document-Q&A tasks passing, with a 7.4-second average latency on that run."
     },
     {
       "slug": "verticaldesk",
@@ -150,7 +78,7 @@
         "README reports 34/34 automated tests passing",
         "Approval gate before incident creation"
       ],
-      "resultNote": "Repository-reported test count; not independently rerun for this portfolio.",
+      "resultNote": "Test count from the project README.",
       "evidence": "https://github.com/rohith-jpg/verticaldesk#-highlights",
       "private": true,
       "demo": null,
@@ -166,7 +94,80 @@
       ],
       "mermaid": "flowchart LR\n  A[Request] --> B[Classify]\n  B --> C[Retrieve knowledge]\n  C --> D[Draft and route]\n  D --> E{Human approval}\n  E -->|Approve| F[Create incident]\n  E -->|Reject| G[Discard]",
       "learning": "The boundary between a suggestion and a write matters. The project makes that boundary explicit with an approval gate, citations and a trace, rather than treating a plausible draft as a completed resolution.",
-      "limits": "The source repository is private. Its README image URLs are currently unavailable, so this page uses a labeled workflow illustration. Public demo, accessible screenshots and a measured triage-quality evaluation remain TODOs."
+      "limits": "The source repository is private; I am happy to walk through it on request."
+    },
+    {
+      "slug": "agent-orchestration",
+      "name": "Agent Orchestration",
+      "repo": "agent-orchestration",
+      "category": "Agents & tools",
+      "type": "LANGGRAPH / AGENT WORKFLOWS",
+      "accent": "cyan",
+      "headline": "Specialists with a reviewer in the loop.",
+      "summary": "A task orchestration prototype that routes research and code work to specialists, reviews outputs, and records decisions in a structured trace.",
+      "stack": [
+        "Python",
+        "LangGraph",
+        "Anthropic API",
+        "Tavily",
+        "Docker"
+      ],
+      "results": [
+        "Example trace records planning, dispatch, tools, review and synthesis"
+      ],
+      "resultNote": "Example runs documented in the README.",
+      "evidence": "https://github.com/rohith-jpg/agent-orchestration#proof-it-works--real-outputs",
+      "demo": null,
+      "screenshot": null,
+      "problem": "A request can combine research and calculation. A single answer hides which tool ran, how the task was split, and whether a result was reviewed.",
+      "approach": "I use a LangGraph supervisor to plan and route subtasks, separate research and code specialists to execute them, and a reviewer to approve, retry or escalate. JSON traces capture the path from the original task to the final response.",
+      "workflow": [
+        "User task",
+        "Supervisor plan",
+        "Research / code",
+        "Reviewer",
+        "Synthesis / escalation"
+      ],
+      "mermaid": "flowchart LR\n  A[User task] --> B[Supervisor]\n  B --> C[Research specialist]\n  B --> D[Code specialist]\n  C --> E[Reviewer]\n  D --> E\n  E -->|Approved| F[Synthesis]\n  E -->|Rejected| G[Retry or human escalation]",
+      "learning": "A reviewer can be wrong when it judges new information using stale knowledge. The README documents a fix that supplies the current date and narrows rejection criteria to what the reviewer can actually assess. I would validate that change with a labeled benchmark before making an approval-rate claim.",
+      "limits": "The README includes a 15.5-second example trace. Parallel execution, shared Redis state and cost tracking are next on the roadmap."
+    },
+    {
+      "slug": "rxsupply-ai",
+      "name": "RxSupply AI",
+      "repo": "rxsupply-ai",
+      "category": "AI & retrieval",
+      "type": "LOCAL AI / EVIDENCE VALIDATION",
+      "accent": "mint",
+      "headline": "AI proposes. Python checks. A person decides.",
+      "summary": "An evidence-grounded medicine supply prototype for operations teams. Validates model-selected facts against FDA records and prepares simulated replenishment plans for human review.",
+      "stack": [
+        "Python",
+        "SQLite FTS5",
+        "BM25",
+        "Ollama",
+        "JSON API"
+      ],
+      "results": [
+        "10/10 regression cases passed on the retrieval and validation path",
+        "1,600 normalized records in the dated source snapshot"
+      ],
+      "resultNote": "Regression cases I wrote; procurement scenarios are simulated.",
+      "evidence": "https://github.com/rohith-jpg/rxsupply-ai/blob/main/docs/evaluation.json",
+      "demo": null,
+      "screenshot": null,
+      "problem": "Medicine supply review involves different evidence: national notices, local stock and a purchasing budget. A generated answer can blur those boundaries or invent facts that the source never contained.",
+      "approach": "I retrieve product records with SQLite FTS5 and BM25, ask an optional local model to select facts, and independently compare every proposed field/value against retrieved evidence. Missing or invalid evidence leads to abstention. A separate planning tool works with synthetic inventory under budget and supplier constraints.",
+      "workflow": [
+        "FDA snapshot",
+        "BM25 retrieval",
+        "Local model",
+        "Python validation",
+        "Human review"
+      ],
+      "mermaid": "flowchart LR\n  A[Public FDA snapshot] --> B[SQLite BM25 retrieval]\n  B --> C[Local LLM fact selection]\n  C --> D[Python claim validator]\n  D --> E[Evidence packet or abstention]\n  F[Simulated inventory] --> G[Budget planning]\n  E --> H[Human review]\n  G --> H",
+      "learning": "Separating model proposals from deterministic validation makes failures inspectable. Exact source agreement is useful, but it cannot establish clinical suitability or local availability. The evaluation explicitly separates the extractive baseline from the optional LLM path.",
+      "limits": "Runs as a CLI and a local JSON API. Next step: a broader evaluation that covers the optional LLM path."
     },
     {
       "slug": "joblens-mcp",
@@ -184,10 +185,9 @@
         "PDF parsing"
       ],
       "results": [
-        "Search, parse and match exposed as assistant tools",
-        "[TODO] Add a measured parsing and matching evaluation"
+        "Search, parse and match exposed as assistant tools"
       ],
-      "resultNote": "Skill overlap is a transparent heuristic, not a hiring prediction.",
+      "resultNote": "Skill overlap is a transparent heuristic.",
       "evidence": "https://github.com/rohith-jpg/joblens-mcp#features",
       "demo": null,
       "screenshot": null,
@@ -202,7 +202,7 @@
       ],
       "mermaid": "flowchart LR\n  A[AI assistant] --> B[FastMCP tools]\n  B --> C[Adzuna API]\n  B --> D[Local resume parser]\n  C --> E[Skill overlap scoring]\n  D --> E\n  E --> F[Matched and missing skills]",
       "learning": "Separating the job-data adapter from the tool layer keeps a provider change from spreading through the MCP interface. An explainable score is useful for search exploration, but should not be presented as an assessment of someone's ability.",
-      "limits": "An Adzuna API key and local MCP client are required. Hosted demo, genuine interface capture and measured parsing accuracy remain TODOs."
+      "limits": "Requires an Adzuna API key and a local MCP client."
     },
     {
       "slug": "lateral-movement-hunt",
@@ -224,7 +224,7 @@
         "14 synthetic events produce 2 alerts in one scenario",
         "Includes benign controls and evidence prerequisites"
       ],
-      "resultNote": "Synthetic exercise; not measured real-world detection quality.",
+      "resultNote": "Synthetic scenario built for the exercise.",
       "evidence": "https://github.com/rohith-jpg/lateral-movement-hunt#usage-example",
       "demo": "https://famous-cobbler-104cfe.netlify.app/",
       "screenshot": "assets/lateral-movement-hunt-screen.webp"
@@ -248,7 +248,7 @@
         "13 findings across 6 fictional users and 6 assets",
         "4 automated tests pass in the local lab"
       ],
-      "resultNote": "Fictional data; no live identity or device-management integration.",
+      "resultNote": "Fictional sample data; no live integrations.",
       "evidence": "https://github.com/rohith-jpg/workplace-systems-lab#what-it-demonstrates",
       "demo": null,
       "screenshot": null
