@@ -5,6 +5,7 @@
   "linkedin": "https://www.linkedin.com/in/rohithsinghu/",
   "github": "https://github.com/rohith-jpg",
   "url": "https://rohith-jpg.github.io",
+  "updated": "2026-11-06",
   "resume": null,
   "certifications": [
     {
@@ -113,7 +114,7 @@
         "Docker"
       ],
       "results": [
-        "Example trace records planning, dispatch, tools, review and synthesis"
+        "A documented 15.5-second example run traces five stages: planning, dispatch, tool calls, review and synthesis"
       ],
       "resultNote": "Example runs documented in the README.",
       "evidence": "https://github.com/rohith-jpg/agent-orchestration#proof-it-works--real-outputs",
@@ -130,7 +131,7 @@
       ],
       "mermaid": "flowchart LR\n  A[User task] --> B[Supervisor]\n  B --> C[Research specialist]\n  B --> D[Code specialist]\n  C --> E[Reviewer]\n  D --> E\n  E -->|Approved| F[Synthesis]\n  E -->|Rejected| G[Retry or human escalation]",
       "learning": "A reviewer can be wrong when it judges new information using stale knowledge. The README documents a fix that supplies the current date and narrows rejection criteria to what the reviewer can actually assess. I would validate that change with a labeled benchmark before making an approval-rate claim.",
-      "limits": "The README includes a 15.5-second example trace. Parallel execution, shared Redis state and cost tracking are next on the roadmap."
+      "limits": "Parallel execution, shared Redis state and cost tracking are next on the roadmap."
     },
     {
       "slug": "rxsupply-ai",
@@ -185,7 +186,7 @@
         "PDF parsing"
       ],
       "results": [
-        "Search, parse and match exposed as assistant tools"
+        "Job search, local resume parsing and skill-overlap scoring run as FastMCP tools, listing matched and missing skills"
       ],
       "resultNote": "Skill overlap is a transparent heuristic.",
       "evidence": "https://github.com/rohith-jpg/joblens-mcp#features",

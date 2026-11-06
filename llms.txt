@@ -2,26 +2,26 @@
 
 > Rohith Singhu is a Software Developer at Viacore Technologies Inc. (since Sep 2026) who builds AI tools that connect answers to evidence: document retrieval (RAG), agent workflows, human-review gates and the software around them. Based in Cleveland, Ohio.
 
-## About
+Software Developer at Viacore Technologies Inc. (Sep 2026 – present). Previously Software Intern at Tech Mahindra (Jan 2024 – Jun 2024) and Student IT Assistant at the AUM Library. M.S. Computer Science, Auburn University at Montgomery (May 2026); B.Tech Computer Science (robotics specialization), VIT-AP University. Certifications: CompTIA Security+ (Sep 2026); AWS Certified Cloud Practitioner (May 2025). Contact: rohithsinghu7@gmail.com.
 
-- Current role: Software Developer, Viacore Technologies Inc. (Sep 2026 – present)
-- Previous: Software Intern, Tech Mahindra (Jan 2024 – Jun 2024); Student IT Assistant, AUM Library
-- Education: M.S. Computer Science, Auburn University at Montgomery (May 2026); B.Tech Computer Science (robotics specialization), VIT-AP University
-- Certifications: CompTIA Security+ (Sep 2026); AWS Certified Cloud Practitioner (May 2025)
-- Research: co-author, "Physiotherapy assistance with human pose estimation", ASEAN Journal of Scientific and Technological Reports, 2024 (DOI: 10.55164/ajstr.v27i4.251096)
-- Contact: rohithsinghu7@gmail.com · GitHub: https://github.com/rohith-jpg · LinkedIn: https://www.linkedin.com/in/rohithsinghu/
+## Profile
+
+- [Portfolio home](https://rohith-jpg.github.io/): about, projects, experience, skills and certifications
+- [GitHub](https://github.com/rohith-jpg): source code for the public projects
+- [LinkedIn](https://www.linkedin.com/in/rohithsinghu/): professional profile
+- [Research paper](https://doi.org/10.55164/ajstr.v27i4.251096): "Physiotherapy Assistance for Patients Using Human Pose Estimation With Raspberry Pi", ASEAN Journal of Scientific and Technological Reports, vol. 27, no. 4, 2024 (co-author)
 
 ## Projects
 
 - [RAGenius](https://rohith-jpg.github.io/projects/ragenius.html): Document Q&A for people who need to check the source. Retrieves PDF passages, attaches citations, and abstains when the evidence is missing. Stack: Python, FastAPI, FAISS, Sentence-Transformers, Streamlit. Result: 52/75 tasks passed in the committed evaluation; 10/10 should-abstain tasks passed.
 - [VerticalDesk](https://rohith-jpg.github.io/projects/verticaldesk.html): An AI-assisted triage prototype for service teams: classifies a request, retrieves knowledge-base articles, drafts a cited resolution, and waits for human approval. Stack: React, FastAPI, Python, MongoDB, RAG. Result: README reports 34/34 automated tests passing; approval gate before incident creation.
-- [Agent Orchestration](https://rohith-jpg.github.io/projects/agent-orchestration.html): A task orchestration prototype that routes research and code work to specialists, reviews outputs, and records decisions in a structured trace. Stack: Python, LangGraph, Anthropic API, Tavily, Docker. Result: Example trace records planning, dispatch, tools, review and synthesis.
+- [Agent Orchestration](https://rohith-jpg.github.io/projects/agent-orchestration.html): A task orchestration prototype that routes research and code work to specialists, reviews outputs, and records decisions in a structured trace. Stack: Python, LangGraph, Anthropic API, Tavily, Docker. Result: A documented 15.5-second example run traces five stages: planning, dispatch, tool calls, review and synthesis.
 - [RxSupply AI](https://rohith-jpg.github.io/projects/rxsupply-ai.html): An evidence-grounded medicine supply prototype for operations teams. Validates model-selected facts against FDA records and prepares simulated replenishment plans for human review. Stack: Python, SQLite FTS5, BM25, Ollama, JSON API. Result: 10/10 regression cases passed on the retrieval and validation path; 1,600 normalized records in the dated source snapshot.
-- [JobLens MCP](https://rohith-jpg.github.io/projects/joblens-mcp.html): An MCP server for job seekers using AI assistants. Combines official job-search API results, local resume parsing and an explainable skill-overlap score. Stack: Python, FastMCP, Adzuna API, PDF parsing. Result: Search, parse and match exposed as assistant tools.
+- [JobLens MCP](https://rohith-jpg.github.io/projects/joblens-mcp.html): An MCP server for job seekers using AI assistants. Combines official job-search API results, local resume parsing and an explainable skill-overlap score. Stack: Python, FastMCP, Adzuna API, PDF parsing. Result: Job search, local resume parsing and skill-overlap scoring run as FastMCP tools, listing matched and missing skills.
 - [Lateral Movement Hunt](https://github.com/rohith-jpg/lateral-movement-hunt): A reproducible investigation exercise for analysts. Correlates authentication and execution records, then presents an evidence-linked timeline and alerts. Stack: Python, JSONL, Splunk SPL, MITRE ATT&CK, JavaScript. Result: 14 synthetic events produce 2 alerts in one scenario; includes benign controls and evidence prerequisites.
 - [Workplace Systems Lab](https://github.com/rohith-jpg/workplace-systems-lab): An offline review tool for access, device inventories, SaaS seats and tickets. Produces prioritized findings and readable evidence for a systems reviewer. Stack: Python, CSV / JSON, HTML / CSS, GitHub Actions. Result: 13 findings across 6 fictional users and 6 assets; 4 automated tests pass in the local lab.
 
 ## Optional
 
-- [Home page](https://rohith-jpg.github.io/): full portfolio, skills and experience
+- [Full case-study text](https://rohith-jpg.github.io/llms-full.txt): every case study as plain text
 - [Sitemap](https://rohith-jpg.github.io/sitemap.xml)

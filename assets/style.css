@@ -18,4 +18,5 @@ body{background:var(--bg);color:var(--ink);font-family:'Segoe UI',Arial,sans-ser
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 }
 
-.mermaid-figure{padding:20px;background:#111323;border:1px solid var(--line);border-radius:12px;margin:22px 0;overflow:auto}.mermaid-figure img{min-width:500px;width:100%;max-height:430px}.mermaid-figure figcaption{font-size:11px;color:#b8b5cd;margin-top:15px}
+.mermaid-figure{padding:20px;background:#111323;border:1px solid var(--line);border-radius:12px;margin:22px 0;overflow:auto}.mermaid-figure img{min-width:500px;width:100%;height:auto;max-height:430px}.mermaid-figure figcaption{font-size:11px;color:#b8b5cd;margin-top:15px}
+.not-found-list{margin-top:26px;padding-left:20px;display:grid;gap:10px;color:var(--muted)}
